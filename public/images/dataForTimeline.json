@@ -30,13 +30,26 @@
     {"year":2023,
     "title":"Full-Stack Project / POC - Weather app",
     "details":"Retrieving and displaying the weather for any city"
-    }
+    },
     {"year":2023,
     "title":"Full-Stack Project / POC - Gallery App",
-    "details":"Art pieces from an API is displayed with the ability to like and leaving comments"
+    "details":"Art pieces from an API are displayed with the ability to like and leaving comments"
     },
-    {"year":2022,
-    "title":"Research Assistant at Fraunhofer IWES",
-    "details":"Art pieces from an API is displayed with the ability to like and leaving comments"
+    {"year":2020,
+    "title":"Research Assistant at Fraunhofer IWES - Leading Edge of Wind Turbines",
+    "details":"Project Leader in the area of leading edge research, development of composite calculation tools in Python"
+    },
+    {"year":2018,
+    "title":"Research Assistant at Fraunhofer IWES - Trailing Edge Research",
+    "details":"Research in the field of trailing edge, development of semi automatic crack recognition tools in Python"
+    },
+    {"year":2013,
+    "title":"CAD Design - Freelance",
+    "details":"3D Design for prototypes"
+    },
+    {"year":"-",
+    "title":"Aerospace Engineer - Technical University of Berlin",
+    "details":"Masters in aerospace engineering"
     }
+
 ]
