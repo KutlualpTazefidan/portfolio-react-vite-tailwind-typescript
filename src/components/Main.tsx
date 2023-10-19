@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {FaLinkedinIn} from 'react-icons/fa'
 import  {TypeAnimation} from 'react-type-animation'
 const Main = () => {
+  const [noteVisibility, setNoteVisibility] = useState(false)
+
+  useEffect(()=>{
+    const showTimeout = setTimeout(()=>{
+        setNoteVisibility(true)
+    },1000);
+    const hideTimeout = setTimeout(()=>{
+        setNoteVisibility(false)
+    },20000);
+
+    return ()=>{
+        clearTimeout(showTimeout);
+        clearTimeout(hideTimeout);
+    }
+  },[])
+
+  const handleTransitionEnd = () => {
+    if (!noteVisibility) {
+      // If the element's opacity has reached 0, hide it by setting visibility to 'hidden'
+      setNoteVisibility(false);
+    }
+  };
   return (
     <div id='main'>
         <img className='w-full h-screen object-cover object-left' src="/images/apollo14capsule.jpg" alt="Apollo 14 Capsule - Captured during a trip in Orlando" />
@@ -29,17 +51,30 @@ const Main = () => {
                     />
                 </h2>
                 <div className='flex max-w-[200px]'>
-                    <a href='https://www.linkedin.com/in/kutlualp-tazefidan/' className='rounded-full shadow-lg bg-black shadow-gray-400 m-2 p-4 cursor-pointer backdrop-filter backdrop-blur-lg bg-opacity-80 hover:scale-105 ease in duration-200 hover:bg-opacity-100'>
+                    <a href='https://www.linkedin.com/in/kutlualp-tazefidan/' className='rounded-full shadow-lg bg-black shadow-gray-400 m-2 p-4 cursor-pointer backdrop-filter backdrop-blur-lg bg-opacity-80 hover:scale-105 ease-in duration-200 hover:bg-opacity-100'>
                         <FaLinkedinIn className='cursor-pointer' size={20} color={'#0072b1'}/>
                     </a>
                 </div>
-                <div className='fixed bottom-0 mb-8 rounded-lg bg-black/50 mt-16'>
-                <h2 className='flex sm:text-1xl text-1xl p-4 font-small text-white '>
+                <div 
+                onTransitionEnd={handleTransitionEnd}
+                className={`fixed bottom-0
+                            mb-8 rounded-lg 
+                            bg-black/50 
+                            mt-16 
+                            sm:text-1xl 
+                            text-1xl p-4 
+                            font-small 
+                            text-white 
+                            opacity-0 
+                            transition-opacity
+                            ease-in-out
+                            duration-500
+                            ${noteVisibility ? 'opacity-100' : 'opacity-0'}`}>
                     As of today, 20.10.2023, my journey to the stars begins.<br/>
                     Cheers to everyone who had a part in making it happen.<br/>
-                    Even if we never cross passes again, we all shall meet in eternity.<br/>
-                    My heart goes out to the ones, who'll be by my side wherever I go.<br/>
-                    Lots of love to everyone!</h2>
+                    My heart goes out to the ones, who decide to be by my side wherever I go.<br/>
+                    Even if we never cross passes again, we shall all meet in eternity.<br/>
+                    Lots of love to everyone!
                 </div>
             </div>
         </div>
