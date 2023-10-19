@@ -57,8 +57,7 @@ const Main = () => {
                 </div>
                 <div 
                 onTransitionEnd={handleTransitionEnd}
-                className={`fixed bottom-0
-                            mb-8 rounded-lg 
+                className={`fixed bottom-0 right-0 
                             bg-black/50 
                             mt-16 
                             sm:text-1xl 
