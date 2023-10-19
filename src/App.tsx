@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import {SideNavbar} from './components/SideNavbar.tsx'
 import Main from './components/Main.tsx'
+import Background from './components/Background.tsx'
 
 function App() {
 
   return (
     <div>
-      <SideNavbar/>
+      <Background/>
       <Main/>
       </div>    
   )
