@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {FaLinkedinIn} from 'react-icons/fa'
 import  {TypeAnimation} from 'react-type-animation'
+import { SideNavbar } from './SideNavbar'
 const Main = () => {
   const [noteVisibility, setNoteVisibility] = useState(false)
 
@@ -26,11 +27,15 @@ const Main = () => {
   };
   return (
     <div id='main'>
-        <img className='w-full h-screen object-cover object-left' src="/images/apollo14capsule.jpg" alt="Apollo 14 Capsule - Captured during a trip in Orlando" />
-        <div className='w-full h-screen absolute top-0 left-0 bg-white/50'>
-            <div className='max-w-[700px] m-auto h-full w-full flex flex-col justify-center items-center lg:items-start '>
-                <h1 className='sm:text-5xl text-4xl font-bold text-gray-1000'>I'm Kutlualp Tazefidan</h1>
-                <h2 className='flex sm:text-2xl text-2xl pt-4 pb-4 font-medium'>I'm
+        <div className='w-full h-screen absolute top-0 left-0 bg-white/0'>
+            <div className='w-full fixed flex flex-row justify-between top-0'>
+            <div className='flex justify-center items-center '>
+                <a href='https://www.linkedin.com/in/kutlualp-tazefidan/' className='ml-7 mr-4 mt-4 h-auto rounded-full shadow-lg bg-black shadow-gray-400 p-4 cursor-pointer backdrop-filter backdrop-blur-lg bg-opacity-80 hover:scale-105 ease-in duration-200 hover:bg-opacity-100'>
+                            <FaLinkedinIn className='cursor-pointer' size={20} color={'#0072b1'}/>
+                </a>
+                <h2 className='inline-block mt-4 sm:text-2xl font-semibold text-gray-1000 text-center text-white'>Kutlualp Tazefidan</h2>
+            </div>
+            <h2 className='flex self-start mr-7 text-2xl text-2xl pt-5 pb-4 font-normal text-white hidden sm:block'>I'm
                 <TypeAnimation
                     sequence={[
                         // Same substring at the start will only be typed out once, initially
@@ -50,16 +55,19 @@ const Main = () => {
                     repeat={Infinity}
                     />
                 </h2>
-                <div className='flex max-w-[200px]'>
-                    <a href='https://www.linkedin.com/in/kutlualp-tazefidan/' className='rounded-full shadow-lg bg-black shadow-gray-400 m-2 p-4 cursor-pointer backdrop-filter backdrop-blur-lg bg-opacity-80 hover:scale-105 ease-in duration-200 hover:bg-opacity-100'>
-                        <FaLinkedinIn className='cursor-pointer' size={20} color={'#0072b1'}/>
-                    </a>
+            </div>
+            <div className='inline-block m-auto h-full w-full flex flex-row justify-center items-center'>
+                <SideNavbar/>
+                <div className='flex flex-col items-center ml-4 mr-4 sm:mx-28'>
+                <h1 className='sm:text-4xl text-3xl font-medium text-gray-1000 text-left max-w-[700px] text-white bg-black/80 p-8'>Hi there, I'm Kutlualp, <br/> junior <span className="text-[#007acc]">full-stack web developer</span> and <br/> <span className='text-[#fee500]'>data scientist </span>, enthusiastic about developing inventive solutions.                    
+                    </h1>
                 </div>
                 <div 
                 onTransitionEnd={handleTransitionEnd}
                 className={`fixed bottom-0 right-0 
                             bg-black/50 
                             mt-16 
+                            pr-7
                             sm:text-1xl 
                             text-1xl p-4 
                             font-small 
@@ -69,9 +77,8 @@ const Main = () => {
                             ease-in-out
                             duration-500
                             ${noteVisibility ? 'opacity-100' : 'opacity-0'}`}>
-                    As of today, 20.10.2023, my journey to the stars begins.<br/>
-                    Cheers to everyone who had a part in making it happen.<br/>
-                    My heart goes out to the ones, who decide to be by my side wherever I go.<br/>
+                    As of today, 10.2023, my journey to the stars begins.<br/>
+                    Cheers to everyone who played a part in making it happen.<br/>
                     Even if we never cross passes again, we shall all meet in eternity.<br/>
                     Lots of love to everyone!
                 </div>
