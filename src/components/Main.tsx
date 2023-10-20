@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import {FaLinkedinIn} from 'react-icons/fa'
-import  {TypeAnimation} from 'react-type-animation'
 import { SideNavbar } from './SideNavbar'
 const Main = () => {
   const [noteVisibility, setNoteVisibility] = useState(false)
@@ -27,35 +25,8 @@ const Main = () => {
   };
   return (
     <div id='main'>
-        <div className='w-full h-screen absolute top-0 left-0 bg-white/0'>
-            <div className='w-full fixed flex flex-row justify-between top-0'>
-            <div className='flex justify-center items-center '>
-                <a href='https://www.linkedin.com/in/kutlualp-tazefidan/' className='ml-7 mr-4 mt-4 h-auto rounded-full shadow-lg bg-black shadow-gray-400 p-4 cursor-pointer backdrop-filter backdrop-blur-lg bg-opacity-80 hover:scale-105 ease-in duration-200 hover:bg-opacity-100'>
-                            <FaLinkedinIn className='cursor-pointer' size={20} color={'#0072b1'}/>
-                </a>
-                <h2 className='inline-block mt-4 sm:text-2xl font-semibold text-gray-1000 text-center text-white'>Kutlualp Tazefidan</h2>
-            </div>
-            <h2 className='flex self-start mr-7 text-2xl text-2xl pt-5 pb-4 font-normal text-white hidden sm:block'>I'm
-                <TypeAnimation
-                    sequence={[
-                        // Same substring at the start will only be typed out once, initially
-                        "a Front-End Developer",
-                        4000, // wait 1s before replacing "Mice" with "Hamsters"
-                        'a Data Scientist',
-                        4000,
-                        'a Machine Learning Enthusiast',
-                        4000,
-                        'an Aeronautical Engineer',
-                        4000,
-                    ]}
-                    wrapper="span"
-                    speed={50}
-                    cursor={true}
-                    style={{ fontSize: '1em', paddingLeft:'5px', display: 'inline-block' }}
-                    repeat={Infinity}
-                    />
-                </h2>
-            </div>
+        <div className='w-full h-screen top-0 left-0 bg-white/0'>
+            <div className="w-full h-screen  bg-cover bg-top bg-white/0 bg-fixed" style={{ backgroundImage: 'url("/images/apollo14capsule.jpg")' }}>
             <div className='inline-block m-auto h-full w-full flex flex-row justify-center items-center'>
                 <SideNavbar/>
                 <div className='flex flex-col items-center ml-4 mr-4 sm:mx-28'>
@@ -79,8 +50,9 @@ const Main = () => {
                             ${noteVisibility ? 'opacity-100' : 'opacity-0'}`}>
                     As of today, 10.2023, my journey to the stars begins.<br/>
                     Cheers to everyone who played a part in making it happen.<br/>
-                    Even if we never cross passes again, we shall all meet in eternity.<br/>
+                    Even if our paths never cross again, we shall all meet in eternity.<br/>
                     Lots of love to everyone!
+                </div>
                 </div>
             </div>
         </div>
