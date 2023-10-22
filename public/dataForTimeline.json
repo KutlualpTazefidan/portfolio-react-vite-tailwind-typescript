@@ -1,0 +1,55 @@
+[
+    {"year":2023,
+    "title":"Completed a Data Science Bootcamp at Spiced",
+    "details":"Completed a data science bootcamp, which provided me with valuable skills and knowledge in the field of data analysis and interpretation. Throughout the course, I learned to collect, clean, and analyze data, as well as build predictive models to make informed decisions. I also gained proficiency in using various data science tools and techniques: Python, Jupyter Notebook, VSCode, Git, AWS, Docker, Regression and Deep Neural Network models, allowing me to extract meaningful insights from complex datasets. This course not only enhanced my technical skills but also deepened my understanding of the importance of data in making data-driven decisions in various industries."
+    },
+    {"year":2023,
+    "title":"Data Science Project - Development of Convergence Oracle",
+    "details":"Extracting trends and predicting their growth from scientific publications involved clustering the publications and extracting labels using BERTopic. Predictions were made using a Deep Neural Network with LSTM layers, and dashboards and 3D graphs were created to visualize the results."
+    },
+    {"year":2023,
+    "title":"Data Science Project - Predicting Flight Delays",
+    "details":"Gathering, combining, cleaning, and preparing flight data, followed by future modeling and model selection using various techniques. Finally, predictions were made using various models, including hyperparameter optimization."
+    },
+    {"year":2023,
+    "title":"Data Science Project - Explatory data analysis",
+    "details":"Performing EDA on the Boston Housing Data."
+    },
+    {"year":2023,
+    "title":"Completed a Full-Stack Bootcamp at Spiced",
+    "details":"Completed intensive full-stack bootcamp that emphasized frontend development. Throughout the program, I gained hands-on experience in building responsive and interactive user interfaces, mastering essential web technologies such as HTML, CSS, JavaScript, React, Next-JS, MongoDB. This comprehensive training equipped me with the skills to create dynamic web applications, collaborate with backend developers, and understand the end-to-end development process."
+    },
+    {"year":2023,
+    "title":"Full-Stack Project - 3D Object Manipulation app",
+    "details":"Development of Next.js application for importing and placing 3d objects and Lights into a scene, with the ability to give different layers, names, materials , animate, save and retrieve. "
+    },
+    {"year":2023,
+    "title":"Full-Stack Project / POC - Touria app",
+    "details":"Webpage where you can add places of interest with images "
+    },
+    {"year":2023,
+    "title":"Full-Stack Project / POC - Weather app",
+    "details":"Retrieving and displaying the weather for any city"
+    },
+    {"year":2023,
+    "title":"Full-Stack Project / POC - Gallery App",
+    "details":"Art pieces from an API are displayed with the ability to like and leaving comments"
+    },
+    {"year":2020,
+    "title":"Research Assistant at Fraunhofer IWES - Leading Edge of Wind Turbines",
+    "details":"Project Leader in the area of leading edge research, development of composite calculation tools in Python"
+    },
+    {"year":2018,
+    "title":"Research Assistant at Fraunhofer IWES - Trailing Edge Research",
+    "details":"Research in the field of trailing edge, development of semi automatic crack recognition tools in Python"
+    },
+    {"year":2013,
+    "title":"CAD Design - Freelance",
+    "details":"3D Design for prototypes"
+    },
+    {"year":"-",
+    "title":"Aerospace Engineer - Technical University of Berlin",
+    "details":"Masters in aerospace engineering"
+    }
+
+]
