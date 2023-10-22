@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {FaLinkedinIn} from 'react-icons/fa'
 import {AiOutlineMenu,AiOutlineHome,AiOutlineProject, AiOutlineMail,AiOutlineAppstore} from 'react-icons/ai'
 import  {TypeAnimation} from 'react-type-animation'
@@ -11,8 +11,29 @@ const Topbar = () => {
   const handleNavbarVisibility = () => {
     setNavbarVisibility(!navbarVisibility);
   }
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(()=>{
+    const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+        const scrollThreshold = 100;
+
+        if (currentScrollPos > prevScrollPos && currentScrollPos > scrollThreshold) {
+            setNavbarVisibility(false)
+        } else {
+            setNavbarVisibility(true);
+        }
+        setPrevScrollPos(currentScrollPos)
+    }
+    window.addEventListener('scroll',handleScroll)
+    return () => {
+        window.removeEventListener('scroll',handleScroll)
+    }
+  },[prevScrollPos])
+
   return (
-        <div className={styles.topbar}>
+        <div className={`${styles.topbar} ${!navbarVisibility? styles.hidden : ''}`}>
             <div className={styles.buttonNameContainer}>
                 <div className={styles.link}>
                 <a href='https://www.linkedin.com/in/kutlualp-tazefidan/'>

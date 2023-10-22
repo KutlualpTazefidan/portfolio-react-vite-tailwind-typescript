@@ -1,0 +1,34 @@
+.image{
+  height: 100vh;
+  min-width: 100%;
+  object-fit:cover;
+}
+
+.plxContainer{
+  height:5000px
+}
+
+.textContainer {
+  position: fixed;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  width: auto; /* Fit the width to its content */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; /* Use flex layout */
+  flex-direction: column; /* Stack the text vertically */
+  justify-content: center; /* Center vertically */
+  align-items: start; /* Center horizontally */
+  z-index: 1000;
+  /* opacity: 0; */
+}
+
+.text {
+  font-size: 1.5rem;
+  text-align: center; /* Center the text within the container */
+  margin-top: 20px; /* Add a margin to separate the text elements */
+  z-index: 1000;
+  color: white;
+  /* opacity: 0; */
+}

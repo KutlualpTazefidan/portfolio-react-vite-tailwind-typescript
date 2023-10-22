@@ -11,12 +11,18 @@
     /* background-color: #fff; */
     padding: 1.5rem;
     z-index: 1;
+    transition: transform 0.3s ease-in-out;
+  }
+.topbar.hidden{
+    transform: translateY(-100%);
+    pointer-events: none;
   }
 .buttonNameContainer {
   display:flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .link {
     display: flex;
