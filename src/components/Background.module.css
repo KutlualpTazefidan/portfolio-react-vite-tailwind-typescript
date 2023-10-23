@@ -1,31 +1,36 @@
-.shadow {
-    width: 100%;
-    height:500px
-}
-
-.shadow::after {
-    content: "";
-    width:100%;
-    height:500px;
-    background-image: linear-gradient(to bottom, #000,#ffffff00);
-    opacity: 1.0;
-}
-
 .banner {
- height:100vh;
+    height:100vh;
+    z-index: 2000;
 }
 
 .gradient {
+    position: relative;
+    z-index: 2002;
     background: linear-gradient(rgba(14, 62, 151, 0.5) 50%, black);
+    /* background-color: #000; */
   }
-
-  .image{
-    /* height:100vh */
-  }
-
-  .plxContainer{
-}
 
 .parallaxContainer{
-    height:3000px;
+    position:relative;
+    /* height:3000px; */
+    z-index:2000;
+  }
+
+.gradientOverlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, #000000, #00000000);
+  }
+
+  .blackBackground{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height:300px;
+    background-color:black;
   }
