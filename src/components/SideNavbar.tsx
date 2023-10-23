@@ -1,14 +1,17 @@
-import React,{useState} from 'react'
-import {AiOutlineMenu,AiOutlineHome,AiOutlineProject, AiOutlineMail,AiOutlineAppstore} from 'react-icons/ai'
+// import React,{useState} from 'react'
+import {useState} from 'react'
+import {AiOutlineHome,AiOutlineProject, AiOutlineMail,AiOutlineAppstore} from 'react-icons/ai'
 import {BsPerson} from 'react-icons/bs'
 import styles from './SideNavbar.module.css'; // Import the CSS Module
 
 export const SideNavbar = () => {
   const [navbarVisibility,setNavbarVisibility] = useState(false)
 
-  const handleNavbarVisibility = () => {
-    setNavbarVisibility(!navbarVisibility);
-  }
+  // to prevent deployment error
+  setNavbarVisibility(false)
+  // const handleNavbarVisibility = () => {
+  //   setNavbarVisibility(!navbarVisibility);
+  // }
   return (
     <div>
       {/* <div className={`${responsive.showItem} ${styles.menuIcon}`}>

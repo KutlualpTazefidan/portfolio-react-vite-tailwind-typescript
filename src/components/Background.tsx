@@ -1,10 +1,10 @@
-import React from 'react'
+// import React from 'react'
 // import Plx from 'react-plx'
 import styles from './Background.module.css'; 
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { ParallaxBanner } from "react-scroll-parallax";
 import { BannerLayer } from 'react-scroll-parallax/dist/components/ParallaxBanner/types';
-import Topbar from './Topbar';
+// import Topbar from './Topbar';
 
 const Background = () => {
   
@@ -28,19 +28,18 @@ const Background = () => {
       ),
     };
 
-    const topbar: BannerLayer = {
-      opacity: [0, 1, "easeOutCubic"],
-      shouldAlwaysCompleteAnimation: true,
-      expanded: false,
-      speed:-10,
-      // children: (<div className={styles.gradient} />),
-      children: (
-        // <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-blue-900" />
-        // <div className={styles.gradientOverlay} />
-        <Topbar/>
-      ),
-      
-    };
+    // const topbar: BannerLayer = {
+    //   opacity: [0, 1, "easeOutCubic"],
+    //   shouldAlwaysCompleteAnimation: true,
+    //   expanded: false,
+    //   speed:-10,
+    //   // children: (<div className={styles.gradient} />),
+    //   children: (
+    //     // <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-blue-900" />
+    //     // <div className={styles.gradientOverlay} />
+    //     <Topbar/>
+    //   ),
+    // };
 
 
 

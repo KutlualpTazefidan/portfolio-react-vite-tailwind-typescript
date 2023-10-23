@@ -1,6 +1,8 @@
-import React,{useState,useEffect} from 'react'
+// import React,{useState,useEffect} from 'react'
+import {useState,useEffect} from 'react'
 import {FaLinkedinIn} from 'react-icons/fa'
-import {AiOutlineMenu,AiOutlineHome,AiOutlineProject, AiOutlineMail,AiOutlineAppstore} from 'react-icons/ai'
+// import {AiOutlineMenu,AiOutlineHome,AiOutlineProject, AiOutlineMail,AiOutlineAppstore} from 'react-icons/ai'
+import {AiOutlineMenu} from 'react-icons/ai'
 import  {TypeAnimation} from 'react-type-animation'
 import styles from './Topbar.module.css'; // Import the CSS Module
 import sidebarStyles from './SideNavbar.module.css'
