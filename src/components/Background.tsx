@@ -18,15 +18,15 @@ const Background = () => {
       
     };
     
-    const blackBackground: BannerLayer = {
-      opacity: [0.5, 1, "easeOutCubic"],
-      shouldAlwaysCompleteAnimation: true,
-      expanded: false,
-      children: (
-        // <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-blue-900" />
-        <div className={styles.blackBackground} />
-      ),
-    };
+    // const blackBackground: BannerLayer = {
+    //   opacity: [0.5, 1, "easeOutCubic"],
+    //   shouldAlwaysCompleteAnimation: true,
+    //   expanded: false,
+    //   children: (
+    //     // <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-blue-900" />
+    //     <div className={styles.blackBackground} />
+    //   ),
+    // };
 
     // const topbar: BannerLayer = {
     //   opacity: [0, 1, "easeOutCubic"],
@@ -44,14 +44,17 @@ const Background = () => {
 
 
   return (
+  <>  
     <div className={styles.parallaxContainer}>
     <ParallaxProvider>
       <ParallaxBanner
-        layers={[gradientOverlay,blackBackground]}
+        layers={[gradientOverlay]}
         className={styles.banner}
       />
     </ParallaxProvider>
     </div>
+    <div className={styles.blackBackground}></div>
+  </>
         )
 }
 
