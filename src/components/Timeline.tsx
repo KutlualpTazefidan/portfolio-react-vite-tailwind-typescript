@@ -1,6 +1,6 @@
-import React from 'react'
-import TimelineItem from './TimelineItem'
-import data from './dataForTimeline.json';
+// import React from 'react'
+// import TimelineItem from './TimelineItem'
+// import data from './dataForTimeline.json';
 
 
 const Timeline = () => {
