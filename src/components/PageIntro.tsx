@@ -267,7 +267,7 @@ const PageIntro = () => {
                 parallaxData = {[
                 {
                     start:0,
-                    end:2150,
+                    end:2100,
                     easing: 'easeInOut',
                     properties:[{
                     startValue:0.,
@@ -277,7 +277,7 @@ const PageIntro = () => {
                 },
                 {
                     start:2150,
-                    end:2400,
+                    end:2600,
                     easing: 'easeInOut',
                     properties:[{
                     startValue:0.,
@@ -286,8 +286,8 @@ const PageIntro = () => {
                     }]
                 },
                 {
-                    start:2800,
-                    end:3200,
+                    start:3000,
+                    end:3400,
                     easing: 'easeInOut',
                     properties:[{
                     startValue:1.,
@@ -314,7 +314,7 @@ const PageIntro = () => {
                 parallaxData = {[
                 {
                     start:0,
-                    end:3150,
+                    end:3300,
                     easing: 'easeInOut',
                     properties:[{
                     startValue:0.,
@@ -323,8 +323,8 @@ const PageIntro = () => {
                     }]
                 },
                 {
-                    start:3150,
-                    end:3400,
+                    start:3300,
+                    end:3700,
                     easing: 'easeInOut',
                     properties:[{
                     startValue:0.,
