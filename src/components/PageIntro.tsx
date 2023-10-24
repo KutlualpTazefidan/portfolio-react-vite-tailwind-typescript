@@ -102,10 +102,13 @@ const PageIntro = () => {
     image6.src = '/images/6_space_ship.png';
     image6.onload = () => setImage6Loaded(true);
 
+    // const originalOverflow = copy(document.body.style.overflow);
+    document.body.style.overflow = 'hidden';
 
     setTimeout(() => {
       if (image1Loaded && image2Loaded && image3Loaded && image4Loaded && image5Loaded && image6Loaded) {
         setAllImagesLoaded(true);
+        document.body.style.overflow = '';
       }
     }, 1000); 
     
