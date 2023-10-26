@@ -1,12 +1,14 @@
 // import React from 'react'
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useRef} from 'react'
 import styles from './PageIntro.module.css'
 import Plx from 'react-plx'
 import { Triangle } from  'react-loader-spinner'
+import useScrollSnap from "react-use-scroll-snap";
 
 
 const PageIntro = () => {
-
+  const scrollRef = useRef(null);
+  useScrollSnap({ ref: scrollRef, duration: 0});
   // const introPageLength = 5000;
   // const plxFadeIn = 0;
   // const plxWait = 0;
@@ -388,7 +390,7 @@ const PageIntro = () => {
         </div>
 
         {/* Second Text container */}
-        <div className={styles.textContainer}>
+        <div className={styles.textContainer} ref={scrollRef}>
           {/* 3 text */}
 
           <Plx          
@@ -435,7 +437,7 @@ const PageIntro = () => {
       </div>
       
       {/* Third Text container */}
-      <div className={styles.textContainer}>
+      <div className={styles.textContainer} ref={scrollRef}>
           {/* 4 text */}
 
           <Plx          

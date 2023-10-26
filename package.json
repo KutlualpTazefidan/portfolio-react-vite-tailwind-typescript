@@ -20,7 +20,8 @@
     "react-plx": "^2.1.2",
     "react-scroll-parallax": "^3.4.2",
     "react-spring": "^9.7.3",
-    "react-type-animation": "^3.2.0"
+    "react-type-animation": "^3.2.0",
+    "react-use-scroll-snap": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

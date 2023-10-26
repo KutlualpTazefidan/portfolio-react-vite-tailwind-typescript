@@ -18,42 +18,17 @@ const GradientOverlay = () => {
       
     };
     
-    // const blackBackground: BannerLayer = {
-    //   opacity: [0.5, 1, "easeOutCubic"],
-    //   shouldAlwaysCompleteAnimation: true,
-    //   expanded: false,
-    //   children: (
-    //     // <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-blue-900" />
-    //     <div className={styles.blackBackground} />
-    //   ),
-    // };
-
-    // const topbar: BannerLayer = {
-    //   opacity: [0, 1, "easeOutCubic"],
-    //   shouldAlwaysCompleteAnimation: true,
-    //   expanded: false,
-    //   speed:-10,
-    //   // children: (<div className={styles.gradient} />),
-    //   children: (
-    //     // <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-blue-900" />
-    //     // <div className={styles.gradientOverlay} />
-    //     <Topbar/>
-    //   ),
-    // };
-
-
 
   return (
   <>  
     <div className={styles.parallaxContainer}>
-    <ParallaxProvider>
-      <ParallaxBanner
-        layers={[gradientOverlay]}
-        className={styles.banner}
-      />
-    </ParallaxProvider>
+      <ParallaxProvider>
+        <ParallaxBanner
+          layers={[gradientOverlay]}
+          className={styles.banner}
+        />
+      </ParallaxProvider>
     </div>
-    <div className={styles.blackBackground}></div>
   </>
         )
 }
