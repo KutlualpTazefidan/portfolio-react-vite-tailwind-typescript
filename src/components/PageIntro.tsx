@@ -1,9 +1,74 @@
 // import React from 'react'
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useRef} from 'react'
 import styles from './PageIntro.module.css'
 import Plx from 'react-plx'
+import { Triangle } from  'react-loader-spinner'
+import useScrollSnap from "react-use-scroll-snap";
+
 
 const PageIntro = () => {
+  const scrollRef = useRef(null);
+  useScrollSnap({ ref: scrollRef, duration: 0});
+  // const introPageLength = 5000;
+  // const plxFadeIn = 0;
+  // const plxWait = 0;
+  // const plxFadeOut = 0;
+  
+  const animationsConstant = 2000;
+  const AnimationLength_1 = animationsConstant;
+  const AnimationLength_2 = AnimationLength_1 + animationsConstant/2;
+  const AnimationLength_3 = AnimationLength_2 + animationsConstant;
+
+  const plxStart_1 = 0;
+  const plxEnd_1 = AnimationLength_1;
+  const plxStart_2 = 0;
+  const plxEnd_2 = AnimationLength_1;
+  const plxStart_3 = 0;
+  const plxEnd_3 = AnimationLength_1;
+  const plxStart_4 = 0;
+  const plxEnd_4 = AnimationLength_1;
+  const plxStart_5 = 0;
+  const plxEnd_5 = AnimationLength_2;
+  const plxStart_6 = 0;
+  const plxEnd_6 = AnimationLength_3;
+
+  const textAnimationEnd = 400;
+  const textAnimationDelay = 1400;
+  const textAnimationShift = 100;
+
+  const plxTextFadeInStart_1 = 0;
+  const plxTextFadeInEnd_1 = textAnimationEnd;
+  const plxTextFadeOutStart_1 = textAnimationDelay + textAnimationEnd;
+  const plxTextFadeOutEnd_1 = textAnimationEnd * 2 + textAnimationDelay;
+
+  const plxTextAnimationDelayStart_2 = 0;
+  const plxTextAnimationDelayEnd_2 = textAnimationEnd*2;
+  const plxTextFadeInStart_2 = textAnimationEnd*2;
+  const plxTextFadeInEnd_2 = textAnimationDelay;
+  const plxTextFadeOutStart_2 = textAnimationDelay + textAnimationEnd;
+  const plxTextFadeOutEnd_2 = textAnimationEnd * 2 + textAnimationDelay;
+
+  const plxTextAnimationDelayStart_3 = 0;
+  const plxTextAnimationDelayEnd_3 = textAnimationEnd * 2 + textAnimationDelay - textAnimationShift;
+  const plxTextFadeInStart_3 = textAnimationEnd * 2 + textAnimationDelay - textAnimationShift;
+  const plxTextFadeInEnd_3 = textAnimationEnd * 3 + textAnimationDelay;
+  const plxTextFadeOutStart_3 = textAnimationEnd * 4 + textAnimationDelay;
+  const plxTextFadeOutEnd_3 = textAnimationEnd * 5 + textAnimationDelay;
+
+  const plxTextAnimationDelayStart_4 = 0;
+  const plxTextAnimationDelayEnd_4 = textAnimationEnd * 5 + textAnimationDelay-textAnimationShift;
+  const plxTextFadeInStart_4 = textAnimationEnd * 5 + textAnimationDelay-textAnimationShift;
+  const plxTextFadeInEnd_4 = textAnimationEnd * 6 + textAnimationDelay-textAnimationShift;
+  const plxTextFadeOutStart_4 = textAnimationEnd * 8 + textAnimationDelay;
+  const plxTextFadeOutEnd_4 = textAnimationEnd * 9 + textAnimationDelay;
+
+  const plxTextAnimationDelayStart_5 = 0;
+  const plxTextAnimationDelayEnd_5 = textAnimationEnd * 6 + textAnimationDelay-textAnimationShift;
+  const plxTextFadeInStart_5 = textAnimationEnd * 6 + textAnimationDelay-textAnimationShift;
+  const plxTextFadeInEnd_5 = textAnimationEnd * 7 + textAnimationDelay;
+  const plxTextFadeOutStart_5 = textAnimationEnd * 8 + textAnimationDelay;
+  const plxTextFadeOutEnd_5 = textAnimationEnd * 9 + textAnimationDelay;
+
   const [image1Loaded, setImage1Loaded] = useState(false);
   const [image2Loaded, setImage2Loaded] = useState(false);
   const [image3Loaded, setImage3Loaded] = useState(false);
@@ -39,23 +104,37 @@ const PageIntro = () => {
     image6.src = '/images/6_space_ship.png';
     image6.onload = () => setImage6Loaded(true);
 
+    // const originalOverflow = copy(document.body.style.overflow);
+    document.body.style.overflow = 'hidden';
 
-    if (image1Loaded && image2Loaded && image3Loaded && image4Loaded && image5Loaded && image6Loaded){
-      setAllImagesLoaded(true)
-    } 
+    setTimeout(() => {
+      if (image1Loaded && image2Loaded && image3Loaded && image4Loaded && image5Loaded && image6Loaded) {
+        setAllImagesLoaded(true);
+        document.body.style.overflow = '';
+      }
+    }, 1000); 
+    
   }, [image1Loaded, image2Loaded, image3Loaded, image4Loaded, image5Loaded, image6Loaded]);
 
 
   return (
-    <div className={styles.plxContainer}>
-      {allImagesLoaded ? ( 
+    <div className={styles.plxContainer}> 
         <>
+          <div className={`${styles.loadingSpinnerWrapper} ${allImagesLoaded ? styles.hideWrapper:''}`}>
+          <Triangle
+          height="80"
+          width="80"
+          color="#ffffff"
+          ariaLabel="triangle-loading"
+          visible={true}
+        />
+          </div>
           {/* 3_space_ship */}
           <Plx          
           parallaxData = {[
             {
-              start:0,
-              end:2000,
+              start:plxStart_1,
+              end:plxEnd_1,
               easing: 'easeIn',
               properties:[{
                 startValue:1.01,
@@ -83,8 +162,8 @@ const PageIntro = () => {
         <Plx          
           parallaxData = {[
             {
-              start:0,
-              end:2000,
+              start:plxStart_2,
+              end:plxEnd_2,
               easing: 'easeIn',
               properties:[{
                 startValue:1.03,
@@ -111,8 +190,8 @@ const PageIntro = () => {
         <Plx          
           parallaxData = {[
             {
-              start:0,
-              end:2000,
+              start:plxStart_3,
+              end:plxEnd_3,
               easing: 'easeIn',
               properties:[{
                 startValue:1.01,
@@ -139,8 +218,8 @@ const PageIntro = () => {
         <Plx          
           parallaxData = {[
             {
-              start:0,
-              end:2000,
+              start:plxStart_4,
+              end:plxEnd_4,
               easing: 'easeOut',
               properties:[{
                 startValue:1.05,
@@ -169,8 +248,8 @@ const PageIntro = () => {
         <Plx          
           parallaxData = {[
             {
-              start:0,
-              end:3000,
+              start:plxStart_5,
+              end:plxEnd_5,
               easing: 'easeOut',
               properties:[{
                 startValue:1.5,
@@ -199,8 +278,8 @@ const PageIntro = () => {
         <Plx          
           parallaxData = {[
             {
-              start:0,
-              end:4800,
+              start:plxStart_6,
+              end:plxEnd_6,
               easing: 'easeOut',
               properties:[{
                 startValue:3.5,
@@ -232,8 +311,8 @@ const PageIntro = () => {
           <Plx          
               parallaxData = {[
               {
-                  start:0,
-                  end:400,
+                  start:plxTextFadeInStart_1,
+                  end:plxTextFadeInEnd_1,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -242,8 +321,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:1800,
-                  end:2200,
+                  start:plxTextFadeOutStart_1,
+                  end:plxTextFadeOutEnd_1,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:1.,
@@ -270,8 +349,8 @@ const PageIntro = () => {
           <Plx          
               parallaxData = {[
               {
-                  start:0,
-                  end:800,
+                  start:plxTextAnimationDelayStart_2,
+                  end:plxTextAnimationDelayEnd_2,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -280,8 +359,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:800,
-                  end:1400,
+                  start:plxTextFadeInStart_2,
+                  end:plxTextFadeInEnd_2,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -290,8 +369,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:1800,
-                  end:2200,
+                  start:plxTextFadeOutStart_2,
+                  end:plxTextFadeOutEnd_2,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:1.,
@@ -311,14 +390,14 @@ const PageIntro = () => {
         </div>
 
         {/* Second Text container */}
-        <div className={styles.textContainer}>
+        <div className={styles.textContainer} ref={scrollRef}>
           {/* 3 text */}
 
           <Plx          
               parallaxData = {[
               {
-                  start:0,
-                  end:2100,
+                  start:plxTextAnimationDelayStart_3,
+                  end:plxTextAnimationDelayEnd_3,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -327,8 +406,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:2150,
-                  end:2600,
+                  start:plxTextFadeInStart_3,
+                  end:plxTextFadeInEnd_3,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -337,8 +416,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:3000,
-                  end:3400,
+                  start:plxTextFadeOutStart_3,
+                  end:plxTextFadeOutEnd_3,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:1.,
@@ -358,14 +437,14 @@ const PageIntro = () => {
       </div>
       
       {/* Third Text container */}
-      <div className={styles.textContainer}>
-          {/* 3 text */}
+      <div className={styles.textContainer} ref={scrollRef}>
+          {/* 4 text */}
 
           <Plx          
               parallaxData = {[
               {
-                  start:0,
-                  end:3300,
+                  start:plxTextAnimationDelayStart_4,
+                  end:plxTextAnimationDelayEnd_4,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -374,8 +453,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:3300,
-                  end:3700,
+                  start:plxTextFadeInStart_4,
+                  end:plxTextFadeInEnd_4,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -384,8 +463,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:4400,
-                  end:4800,
+                  start:plxTextFadeOutStart_4,
+                  end:plxTextFadeOutEnd_4,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:1.,
@@ -405,8 +484,8 @@ const PageIntro = () => {
           <Plx          
               parallaxData = {[
               {
-                  start:0,
-                  end:3700,
+                  start:plxTextAnimationDelayStart_5,
+                  end:plxTextAnimationDelayEnd_5,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -415,8 +494,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:3700,
-                  end:4000,
+                  start:plxTextFadeInStart_5,
+                  end:plxTextFadeInEnd_5,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:0.,
@@ -425,8 +504,8 @@ const PageIntro = () => {
                   }]
               },
               {
-                  start:4400,
-                  end:4800,
+                  start:plxTextFadeOutStart_5,
+                  end:plxTextFadeOutEnd_5,
                   easing: 'easeInOut',
                   properties:[{
                   startValue:1.,
@@ -445,9 +524,6 @@ const PageIntro = () => {
           </Plx>
       </div>
       </>
-      ):(
-      <div>Loading</div>
-      )}
     </div>
   )
 }

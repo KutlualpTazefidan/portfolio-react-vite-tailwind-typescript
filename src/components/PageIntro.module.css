@@ -5,6 +5,7 @@
 }
 
 .plxContainer{
+  /* scroll-snap-align: start; */
   height:5000px
 }
 
@@ -19,7 +20,7 @@
   display: flex; /* Use flex layout */
   flex-direction: column; /* Stack the text vertically */
   justify-content: center; /* Center vertically */
-  align-items: start; /* Center horizontally */
+  align-items: flex-start; /* Center horizontally */
   z-index: 1000;
   /* opacity: 0; */
 }
@@ -31,4 +32,22 @@
   z-index: 1000;
   color: white;
   /* opacity: 0; */
+}
+
+.loadingSpinnerWrapper{
+  position:fixed;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height:100%;
+  background-color:black;
+  z-index: 1000;
+  opacity: 100;
+  transition: opacity 1s ease-out;
+}
+
+.hideWrapper{
+  opacity: 0;
+  display:none;
 }
