@@ -129,14 +129,14 @@ const PageIntro = () => {
   
     // Attach the event listener when all images are loaded and the spinner is visible
     if (allImagesLoaded) {
-      const spinnerElement = spinnerRef.current;
-      spinnerElement.addEventListener('transitionend', handleSpinnerTransitionEnd);
+      const spinnerElement = spinnerRef.current as HTMLElement | null;
+      spinnerElement?.addEventListener('transitionend', handleSpinnerTransitionEnd);
     }
   
     // Clean up the event listener when the component unmounts
     return () => {
-      const spinnerElement = spinnerRef.current;
-      spinnerElement.removeEventListener('transitionend', handleSpinnerTransitionEnd);
+      const spinnerElement = spinnerRef.current as HTMLElement | null;
+      spinnerElement?.removeEventListener('transitionend', handleSpinnerTransitionEnd);
     };
   }, [allImagesLoaded]);
   
