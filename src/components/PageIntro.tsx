@@ -140,7 +140,6 @@ const PageIntro = () => {
     };
   }, [allImagesLoaded]);
   
-
   return (
     <div className={styles.plxContainer} ref={scrollRef}> 
         <>
