@@ -5,8 +5,9 @@ import Plx from 'react-plx'
 import { Triangle } from  'react-loader-spinner'
 import useScrollSnap from "react-use-scroll-snap";
 
-
 const PageIntro = () => {
+  const [hideSpinner,setHideSpinner] = useState(false)
+  const spinnerRef = useRef(null);
   const scrollRef = useRef(null);
   useScrollSnap({ ref: scrollRef, duration: 0});
   // const introPageLength = 5000;
@@ -78,6 +79,14 @@ const PageIntro = () => {
 
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
+  const handleSpinnerTransitionEnd = () => {
+    setHideSpinner(true);
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when the component mounts (page reloads)
+  }, []);
+
   useEffect(() => {
 
     const image1 = new Image();
@@ -116,11 +125,26 @@ const PageIntro = () => {
     
   }, [image1Loaded, image2Loaded, image3Loaded, image4Loaded, image5Loaded, image6Loaded]);
 
+  useEffect(() => {
+  
+    // Attach the event listener when all images are loaded and the spinner is visible
+    if (allImagesLoaded) {
+      const spinnerElement = spinnerRef.current;
+      spinnerElement.addEventListener('transitionend', handleSpinnerTransitionEnd);
+    }
+  
+    // Clean up the event listener when the component unmounts
+    return () => {
+      const spinnerElement = spinnerRef.current;
+      spinnerElement.removeEventListener('transitionend', handleSpinnerTransitionEnd);
+    };
+  }, [allImagesLoaded]);
+  
 
   return (
-    <div className={styles.plxContainer}> 
+    <div className={styles.plxContainer} ref={scrollRef}> 
         <>
-          <div className={`${styles.loadingSpinnerWrapper} ${allImagesLoaded ? styles.hideWrapper:''}`}>
+          <div className={`${styles.loadingSpinnerWrapper} ${allImagesLoaded ? styles.hideWrapper:''} ${hideSpinner ? styles.hideSpinner:''}`} ref={spinnerRef}>
           <Triangle
           height="80"
           width="80"
@@ -306,7 +330,7 @@ const PageIntro = () => {
         </Plx>
 
         {/* First text container */}
-        <div className={styles.textContainer}>
+        <div className={styles.textContainer} ref={scrollRef}>
           {/* 1 text */}
           <Plx          
               parallaxData = {[
